@@ -1,0 +1,11 @@
+.novel-img{
+    width: 240px;
+    aspect-ratio: 1 / 1.5 ;
+}
+
+@media screen and (max-width: 600px) {
+    .novel-img{
+        width: 120px;
+        aspect-ratio: 1 / 1.5 ;
+    }
+}
