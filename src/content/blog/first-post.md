@@ -1,7 +1,7 @@
 ---
 title: 'First post'
 description: 'Welcome to my blog..'
-pubDate: 'Sep 18 2022'
+pubDate: 'Sep 18 2023'
 heroImage: '/images/white_hair.JPG'
 ---
 
