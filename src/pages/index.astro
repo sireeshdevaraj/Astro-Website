@@ -38,7 +38,7 @@ const date = new Date().toLocaleDateString("en-US",{ year: 'numeric', month: 'lo
 				<a href={OSU.url}>OSU</a> : #{OSU.rank}
 			</p>
 			
-			<p>As of {date}, I have watched over {ANIME.episodes} episodes and {ANIME.watched} animes.</p>
+			<p>As of {date}, I have watched over {ANIME.userStat.episodes} episodes and {ANIME.userStat.watched} animes.</p>
 			<p class="hover-underline-animation">Read <a href="/about">ABOUT ME</a>.</p>	
 		</main>
 		<img class="img" src={PROFILE_PICTURE}/>
