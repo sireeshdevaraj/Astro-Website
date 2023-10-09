@@ -39,9 +39,9 @@ import { SITE_TITLE,
 			</p>
 			
 			<p>As of {DATE}, I have watched over {ANIME.userStat.episodes} episodes and {ANIME.userStat.watched} animes.</p>
-			<blockquote style="display:flex">
-				<p style="color:red">{ANIME.activityStat.status}  </p>
-				
+			<blockquote >
+				<p>Recent: </p>
+				<p style="color:red">{ANIME.activityStat.status.toUpperCase()}{" "}</p>
 				<p> {ANIME.activityStat.media.title.english}</p>
 			</blockquote>
 			<p class="hover-underline-animation">Read <a href="/about">ABOUT ME</a>.</p>	
@@ -109,6 +109,10 @@ import { SITE_TITLE,
 			top:20%;
 			
 		}
-
+		blockquote{
+			font-size: 1.2rem;
+			display:flex;
+			white-space:break-spaces;
+		}
 	</style>
 </html>
