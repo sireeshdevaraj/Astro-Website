@@ -10,9 +10,9 @@ import { SITE_TITLE,
 	OSU, 
 	ANIME,
 	PROFILE_PICTURE ,
-	EMOJIS
+	EMOJIS,
+	DATE
 } from '../consts';
-const date = new Date().toLocaleDateString("en-US",{ year: 'numeric', month: 'long', day: 'numeric' })
 ---
 
 <!doctype html>
@@ -38,7 +38,12 @@ const date = new Date().toLocaleDateString("en-US",{ year: 'numeric', month: 'lo
 				<a href={OSU.url}>OSU</a> : #{OSU.rank}
 			</p>
 			
-			<p>As of {date}, I have watched over {ANIME.userStat.episodes} episodes and {ANIME.userStat.watched} animes.</p>
+			<p>As of {DATE}, I have watched over {ANIME.userStat.episodes} episodes and {ANIME.userStat.watched} animes.</p>
+			<blockquote style="display:flex">
+				<p style="color:red">{ANIME.activityStat.status}  </p>
+				
+				<p> {ANIME.activityStat.media.title.english}</p>
+			</blockquote>
 			<p class="hover-underline-animation">Read <a href="/about">ABOUT ME</a>.</p>	
 		</main>
 		<img class="img" src={PROFILE_PICTURE}/>

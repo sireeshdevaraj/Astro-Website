@@ -15,3 +15,4 @@ export const OSU = {
 export const ANIME = data
 export const PROFILE_PICTURE = "/images/white_hair.JPG"
 export const EMOJIS = ['🥶','🧊','❄️','☃️','⛄']
+export const DATE = new Date().toLocaleDateString("en-US",{ year: 'numeric', month: 'long', day: 'numeric' })
