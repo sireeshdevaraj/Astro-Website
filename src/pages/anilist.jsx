@@ -6,7 +6,7 @@ import {
 } from "../consts"
 import data from "../api.anime";
 
-export function Anilist(){
+export default function Anilist(){
     const [anilist, setAnilist] = useState([]);
     useEffect(()=>{
         setAnilist(data);
