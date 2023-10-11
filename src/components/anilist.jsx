@@ -4,10 +4,10 @@ import {
     DATE,
     ANIME
 } from "../consts"
-import data from "../api.anime";
+import {data} from "../api.anime";
 
 export default function Anilist(){
-    const [anilist, setAnilist] = useState([]);
+    const [anilist, setAnilist] = useState(["test"]);
     useEffect(()=>{
         setAnilist(data);
     },[])
