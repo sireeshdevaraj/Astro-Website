@@ -13,6 +13,7 @@ import { SITE_TITLE,
 	EMOJIS,
 	DATE
 } from '../consts';
+import { Anilist } from './anilist';
 ---
 
 <!doctype html>
@@ -38,12 +39,7 @@ import { SITE_TITLE,
 				<a href={OSU.url}>OSU</a> : #{OSU.rank}
 			</p>
 			
-			<p>As of {DATE}, I have watched over {ANIME.userStat.episodes} episodes and {ANIME.userStat.watched} animes.</p>
-			<blockquote >
-				<p>Recent: </p>
-				<p style="color:red">{ANIME.activityStat.status.toUpperCase()}{" "}</p>
-				<p> {ANIME.activityStat.media.title.english}</p>
-			</blockquote>
+			<Anilist client:load/>
 			<p class="hover-underline-animation">Read <a href="/about">ABOUT ME</a>.</p>	
 		</main>
 		<img class="img" src={PROFILE_PICTURE}/>
@@ -108,11 +104,6 @@ import { SITE_TITLE,
 			left:50%;
 			top:20%;
 			
-		}
-		blockquote{
-			font-size: 1.2rem;
-			display:flex;
-			white-space:break-spaces;
 		}
 	</style>
 </html>
