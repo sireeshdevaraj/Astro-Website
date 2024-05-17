@@ -14,7 +14,9 @@
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+
 }
+
 @font-face {
 	font-family: 'Atkinson';
 	src: url('/fonts/atkinson-regular.woff') format('woff');
@@ -86,9 +88,10 @@ a:hover {
 p {
 	margin-bottom: 1em;
 }
+/*
 .prose p {
 	margin-bottom: 2em;
-}
+}*/
 textarea {
 	width: 100%;
 	font-size: 16px;
@@ -126,12 +129,17 @@ hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
 }
-@media (max-width: 720px) {
+@media screen and (max-width: 720px) {
 	body {
 		font-size: 18px;
 	}
 	main {
 		padding: 1em;
+	}
+	.title{
+		font-size: large;
+		font-weight: 100;
+		
 	}
 }
 
@@ -217,3 +225,76 @@ blockquote{
 	display:flex;
 	white-space:break-spaces;
 }
+
+
+.ImageContainer{
+	margin: auto;
+}
+
+
+
+@font-face {
+	font-family: "Berkeley";
+	src: url("/fonts/berkeley-mono-variable-2.ttf");
+}
+
+.note{
+	background-color: lightblue;
+	border: solid black;
+	border-radius: 0.5rem;
+	padding: 8px;
+	position: relative;
+}
+
+.note-head{
+	width: fit-content;
+	background-color: oklch(64.6% 0.172 266 );
+	position: absolute;
+	top: -24px;
+	padding: 8px;
+	border-radius: 0.5rem;
+	right: -1%;
+	font-family: "Berkeley";
+	font-size: medium;
+}
+
+.note-p{
+	margin-bottom: 0;
+	margin-left: 0;
+	text-wrap: pretty;
+	font-family: "Berkeley";
+}
+
+a{
+	font-family: "Berkeley";
+	color: oklch(66.59% .3018840772950374 4.255646284110876/ 1);
+	text-decoration: none;
+}
+
+@keyframes earthquake-effect {
+	0% {
+		transform: rotate(2deg);
+	}
+	25% {
+		transform: rotate(3deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-3deg);
+	}
+	100% {
+		transform: rotate(-2deg);
+	}
+}
+
+h1{
+	animation: earthquake-effect 2s infinite ease;
+}
+
+h1:hover{
+	cursor: pointer;
+	animation: earthquake-effect 220ms infinite ease-in-out;
+}
+

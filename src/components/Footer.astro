@@ -27,17 +27,23 @@ const today = new Date();
 </footer>
 <style>
 	footer {
-		padding: 1em 1em 1em 1em;
+		padding: 1em ;
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		/*color: rgb(var(--gray));*/
 		color:#0f212c;
 		text-align: center;
+		
+		position: relative;
+  		left: 0;
+  		bottom: 0;
+  		width: -webkit-fill-available;
+		
 	}
 	.social-links {
 		display: flex;
 		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
+		gap: 5px;
+		
 	}
 	.social-links a {
 		text-decoration: none;

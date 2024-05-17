@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-import Bookmark from '../components/bookmarks.mdx'
+import Note from "../components/note.jsx";
+import BooksLayout from "../components/books.mdx"
 ---
 
 <Layout
-	title="Bookmarks"
+	title="Books"
 	description="Stuff I think that are really helpful"
 	pubDate={new Date('September 16 2023')}
 	heroImage="/images/bookmarks/bookmarks.jpg"
-	>
-	<Bookmark/>
+>
+<BooksLayout />
 </Layout>

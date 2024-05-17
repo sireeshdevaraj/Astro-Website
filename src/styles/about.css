@@ -1,5 +1,5 @@
 .novel-img{
-    width: 240px;
+    width: 180px;
     aspect-ratio: 1 / 1.5 ;
 }
 
@@ -8,4 +8,20 @@
         width: 120px;
         aspect-ratio: 1 / 1.5 ;
     }
+}
+
+.image-container{
+    display: flex;
+    opacity: 0;
+}
+
+.novel-img:hover{
+    transform: scale(1.1);
+}
+
+.novel-img-name{
+    width: 180px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }

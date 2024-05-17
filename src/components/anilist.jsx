@@ -5,6 +5,7 @@ import {
     ANIME
 } from "../consts"
 import {data} from "../api.anime";
+import Note from "./note";
 
 export default function Anilist(){
     const [anilist, setAnilist] = useState(["test"]);
@@ -12,13 +13,7 @@ export default function Anilist(){
         setAnilist(data);
     },[])
     return <div>
-        <p>As of {DATE}, I have watched over {ANIME.userStat.episodes} episodes and {ANIME.userStat.watched} animes.</p>
-			<blockquote >
-				<p>Recent: </p>
-				<p style={{color:"red"}}>{ANIME.activityStat.status.toUpperCase()}{" "}</p>
-				<p> {ANIME.activityStat.media.title.english}</p>
-			</blockquote>
+        <p>As of {DATE}, I have watched over {ANIME.userStat.episodes} episodes and {ANIME.userStat.watched} animes.(Tracked by <a href="https://anilist.co/user/KuuHaKu7/">Anilist</a>)</p>
+            <Note content={ANIME.activityStat.status.toUpperCase() + " " + ANIME.activityStat.media.title.english} header={"Recently Watched/Completed"} />
         </div> 
-    
-
 }
