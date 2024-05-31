@@ -1,6 +1,6 @@
 const canvas = document.getElementById("canvas");
-canvas.height = 500//window.window.outerWidth;
-canvas.width = 500//canvas.height;
+canvas.height = window.window.outerWidth < 500 ? window.window.outerWidth : 500;
+canvas.width = canvas.height;
 const ctx = canvas.getContext("2d");
 const btn = document.getElementById("btn");
 const step = document.getElementById("step");
