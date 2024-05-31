@@ -13,6 +13,6 @@ export const OSU = {
     "url" : "https://osu.ppy.sh/users/21179459"
 }
 export const ANIME = data
-export const PROFILE_PICTURE = "/images/white_hair.JPG"
+export const PROFILE_PICTURE = "/images/profile_pics/boruto1.jpeg"
 export const EMOJIS = ['🥶','🧊','❄️','☃️','⛄']
 export const DATE = new Date().toLocaleDateString("en-US",{ year: 'numeric', month: 'long', day: 'numeric' })
