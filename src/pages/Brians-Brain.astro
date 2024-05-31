@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+import "../scripts/bbStyle.css";
+---
+<Layout
+	title="Cellular Automata(Brians brain)"
+	description="Visualising Brians brain."
+	pubDate={new Date('May 31 2024')}
+	heroImage="https://upload.wikimedia.org/wikipedia/commons/a/a7/Brian%27s_brain.gif"
+	>
+    <div class="body">
+        <div class="button-wrapper">
+            <button id="btn">Generate</button>
+            <button id="step">Step</button>
+            <button id="pause">Pause</button>
+            <button id="clear">Clear</button>
+            <p class="iterations-p">No of Iterations:<span id="iterations">0</span></p>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <script src="../scripts/bb.js"></script>
+</Layout>

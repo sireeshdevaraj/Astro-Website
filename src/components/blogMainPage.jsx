@@ -20,8 +20,7 @@ export default function BlogMainPage(props){
 	function updateProgressBar(){
 		if (parseInt(localStorage.total) == posts.length) setProgress(posts.length)
 		else{
-			const ls = localStorage
-			console.log(ls)
+			const ls = localStorage;
 			let total = posts.reduce((result,post,index) => {
 				if (Object.keys(ls).includes(index.toString())){
 					result+=1
