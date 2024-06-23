@@ -50,9 +50,9 @@ export default function BlogMainPage(props){
 						posts.map((post,index) => !compactView ? (
                             
 							<li key={index} >
-								<a href={`/blog/${post.slug}/`} dataIndex={index} onClick={(event) => blogClick(event)}>
+								<a href={`/blog/${post.slug}/`}  onClick={(event) => blogClick(event)}>
 									<div className="seperator">
-									<h4 className="title" dataIndex={index}>{post.data.title}</h4>
+									<h4 className="title" >{post.data.title}</h4>
 									<p className="date">
                                     {
                                     post.data.pubDate.toLocaleDateString('en-us', {year: 'numeric',month: 'short',day: 'numeric'})
@@ -64,9 +64,9 @@ export default function BlogMainPage(props){
 							</li>
 						) : 
                     (<li key={index} >
-                        <a href={`/blog/${post.slug}/`} dataIndex={index} onClick={(event) => blogClick(event)}>
+                        <a href={`/blog/${post.slug}/`}  onClick={(event) => blogClick(event)}>
 									<div className="seperator" style={{fontFamily:"Berkeley",fontSize:"large"}}>
-									<h4 className="title" dataIndex={index}>{post.data.title}</h4>
+									<h4 className="title" >{post.data.title}</h4>
 									<p className="date">
                                     {
                                     post.data.pubDate.toLocaleDateString('en-us', {year: 'numeric',month: 'short',day: 'numeric'})
