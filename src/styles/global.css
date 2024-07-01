@@ -288,10 +288,10 @@ a{
 		transform: rotate(-2deg);
 	}
 }
-
+/*
 h1{
 	animation: earthquake-effect 2s infinite ease;
-}
+}*/
 
 h1:hover{
 	cursor: pointer;
