@@ -326,3 +326,41 @@ h1:hover{
 	  left: 150%;
 	}
   }
+
+
+.comment{
+	/*border: solid black 2px;*/
+	border-radius: 4px;
+	background-color: #F3F4F7;
+	padding: 1rem;
+	font-family: Montserrat, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	margin-top: 14px;
+	display: flex;
+	
+}
+/*
+.comment-link{
+	margin:  auto 0px auto auto;
+	height: 48px;
+	cursor: pointer;
+	border: grey solid 1px;
+	padding: 8px;
+}
+*/
+@media only screen and (max-width : 600px) {
+	iframe{
+		width : 360px;
+		height : 200px
+	}
+
+	.comment{
+		flex-direction: column;
+		
+	}
+/*
+	.comment-link{
+		margin: auto auto auto 0px;
+	}
+		*/
+}
+
