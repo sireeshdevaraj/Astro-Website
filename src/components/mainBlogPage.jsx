@@ -49,9 +49,9 @@ export default function BlogMainPage(props){
 						posts.map((post,index) => !compactView ? (
                             
 							<div className="post-item">
-								<a href={`/blog/${post.slug}/`}  onClick={(event) => blogClick(event)}>
+								<a href={`/blog/${post.slug}/`} dataIndex={index}  onClick={(event) => blogClick(event)}>
 									<div className="seperator" style={{fontFamily:"Berkeley",fontSize:"large"}}>
-									<h4 className="title" >{post.data.title}</h4>
+									<h4 className="title" dataIndex={index}>{post.data.title}</h4>
 									<p style={{color: "black",fontSize:"large"}}>{post.data.description}</p>
 									<p className="date">
                                     {
@@ -64,9 +64,9 @@ export default function BlogMainPage(props){
 							</div>
 						) : 
                     (<div className="post-item">
-                        <a href={`/blog/${post.slug}/`}  onClick={(event) => blogClick(event)}>
+                        <a href={`/blog/${post.slug}/`} dataIndex={index} onClick={(event) => blogClick(event)}>
 									<div className="seperator" style={{fontFamily:"Berkeley",fontSize:"large"}}>
-									<h4 className="title" >{post.data.title}</h4>
+									<h4 className="title" dataIndex={index}>{post.data.title}</h4>
 									<p style={{color: "black",fontSize:"large"}}>{post.data.description}</p>
 									<p className="date">
                                     {
