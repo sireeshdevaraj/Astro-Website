@@ -37,18 +37,19 @@ import "../styles/global.css"
 			<p>
 				{GAMING_ABOUT}
 				<br>
-				<a href={VALORANT.url}>VALORANT</a> : {VALORANT.rank}
+				<a href={VALORANT.url} id="highlight-item">VALORANT</a> : {VALORANT.rank}
 				<br>
-				<a href={OSU.url}>OSU</a> : #{OSU.rank}
+				<a href={OSU.url} id="highlight-item">OSU</a> : #{OSU.rank}
 			</p>
 			
 			<Anilist client:load/>
-			<p >Read <a href="/about">ABOUT ME</a>.<br>
-			Play <a href="/Brians-Brain">Game of Life(Brians brain)</a>.
+			<p >Read <a href="/about" id="highlight-item">ABOUT ME</a>.<br>
+			Play <a href="/Brians-Brain" id="highlight-item">Game of Life(Brians brain)</a>.
 			</p>
 		</main>
 		<img class="img" alt="Anime Profile Picture" src={PROFILE_PICTURE}/>
-		</div>
+
+	</div>
 		<Footer />
 	</body>
 	<style>
@@ -62,7 +63,8 @@ import "../styles/global.css"
 			width: 500px;
 			height: 500px;
 			justify-content:center;
-			margin:auto;
+			/*BEFORE margin:auto;*/
+			margin-top:40px;
 		}
 		@media screen and (max-width: 600px) {
 			.main{
@@ -80,9 +82,9 @@ import "../styles/global.css"
 		}
 		a{
 			text-decoration: auto;
-			color : oklch(66.59% .3018840772950374 4.255646284110876/ 1);
+			color : oklch(0.51 0.3 262.31);
 			font-family: "Berkeley";
-			font-size: large;
+			
 		}
 		
 		

@@ -293,3 +293,13 @@ span{
         width: 100%;
     }
 }
+
+.subscribe-span:hover{
+    color: oklch(66.59% .3018840772950374 4.255646284110876/ 1);
+
+}
+
+.compact-view-text:hover{
+    color: oklch(66.59% .3018840772950374 4.255646284110876/ 1);
+
+}

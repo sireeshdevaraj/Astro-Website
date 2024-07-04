@@ -36,13 +36,18 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
+	/*background: linear-gradient(var(--gray-gradient)) no-repeat;*/
+	background: oklch(98% .01 269/var(--tw-bg-opacity));
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7;
+	background-image: url("/footer.svg");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: 100% 250px;
 }
 main {
 	width: 720px;
@@ -364,3 +369,66 @@ h1:hover{
 		*/
 }
 
+
+.right-main-container{
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+/* highlighting 2*/
+
+.highlight-2 {
+	position: relative;
+	display: inline-block;
+	padding: 3px 6px;
+}
+
+.highlight-2::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 100%;
+	background-image:linear-gradient(to right, #d9a7c7, #eee583);
+	z-index: -1;
+	transition: width 0.5s;
+}
+
+.highlight-2:hover::before{
+	width: 100%;
+}
+
+/*
+Below container-1 for hover effects
+*/
+#highlight-item {
+	position: relative;
+	display: inline-block;
+}
+
+#highlight-item::before {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 100%;
+	background-color:rgb(79, 196, 235);
+	transition: width 0.5s;
+	z-index: -1;
+
+}
+
+#highlight-item:hover::before {
+	width: 100%;
+}
+
+::selection{
+	background-color: rgb(194, 20, 142);
+	color: white;
+}
+
+/*
+Some Good Color Combinations:-
+
+linear-gradient(to right, #d9a7c7, #fffcdc)
+rgb(79, 196, 235)
+*/
