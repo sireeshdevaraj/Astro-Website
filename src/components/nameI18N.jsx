@@ -17,10 +17,20 @@ export default function Name(){
     useEffect(() => {
         let intervalId = setInterval(() => {
             setIndex((index+1)%myNames.length)
-        },2000)
+        },4000)
 
         return () => clearInterval(intervalId)
     },[index])
 
-    return <>{myNames[index]}</>
+    return <>{myNames[index]}
+    {
+        index > 0 
+        ? 
+        <span style={{fontSize:"14px",color:"blue"}}>
+            (Sireesh)
+        </span> 
+        : null
+    }
+    
+    </>
 }
