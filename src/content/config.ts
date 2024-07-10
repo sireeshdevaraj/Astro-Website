@@ -1,3 +1,4 @@
+import { Category } from '@mui/icons-material';
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
@@ -9,6 +10,7 @@ const blog = defineCollection({
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		category: z.string()
 	}),
 });
 
