@@ -3,6 +3,7 @@ title: 'First post'
 description: 'Welcome to my blog..'
 pubDate: 'Sep 18 2023'
 heroImage: '/images/white_hair.JPG'
+category: "welcome"
 ---
 
 Welcome to my First blog post, If you don't know me, read my [about me](/about).<br>
