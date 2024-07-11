@@ -4,11 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, 
 	SITE_DESCRIPTION, 
-	ABOUT_1,ABOUT_2,ABOUT_3,
-	ABOUT_LOVE,
-	GAMING_ABOUT, 
-	VALORANT, 
-	OSU,
+	ABOUT_1,
 	PROFILE_PICTURE
 } from '../consts';
 import Anilist from '../components/anilist';
@@ -64,17 +60,17 @@ const posts = (await getCollection('blog')).sort(
 		</main>
 		<div class="right-main-container">
 		<img class="img" alt="Anime Profile Picture" src={PROFILE_PICTURE}/>
-		<div class="goodies-container mobile:tw-hidden">
+		<div class="goodies-container mobile:tw-hidden desktop:tw-block">
 			<h4 class="goodies-container-p">
 				Play
 			</h4>
-			<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-purple-600 tw-cursor-pointer tw-text-none" href="/Brians-Brain">Brian's brain<ArrowOutwardIcon style={{width:"20px",height:"20px"}}/></a>
+			<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-gray-600 tw-cursor-pointer tw-text-none" href="/Brians-Brain">Brian's brain<ArrowOutwardIcon style={{width:"20px",height:"20px"}}/></a>
 			<h4 class="goodies-container-p">
 				Links
 			</h4>
 			<div class="tw-flex tw-flex-col ">
-				<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-purple-600 tw-cursor-pointer tw-text-none" href="/about"><InfoIcon style={{width:"20px",height:"20px"}}/>About</a>
-				<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-purple-600 tw-cursor-pointer tw-text-none" href="mailto:kuuhakuvalorant1@gmail.com"><MailIcon style={{width:"20px",height:"20px"}}/>Contact</a>
+				<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-gray-600 tw-cursor-pointer tw-text-none" href="/about"><InfoIcon style={{width:"20px",height:"20px"}}/>About</a>
+				<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-gray-600 tw-cursor-pointer tw-text-none" href="mailto:kuuhakuvalorant1@gmail.com"><MailIcon style={{width:"20px",height:"20px"}}/>Contact</a>
 			</div>
 		</div>
 		</div>
