@@ -39,7 +39,6 @@ export default function BlogMainPage(props){
 		updateProgressBar();
 
 	},[compactView])
-
     return <> 
 	<div className="main-container">
 		<div className="settings-container" style={{fontFamily:"Berkeley",fontSize:"large"}}>
@@ -48,14 +47,14 @@ export default function BlogMainPage(props){
 				<span className="progress-text">Progress({progress} / {posts.length})</span>
 				<progress className="progress-bar" max={100} value={progress*100/posts.length}></progress>
 		</div>
-			<div className="blog-posts">
+			<div className="blog-posts tw-mt-3">
 		{
-						posts.map((post,index) => !compactView ? (
+						posts.map((post,index) =>  (
 							<div className="post-item">
 								<a href={`/blog/${post.slug}/`} dataIndex={index}  onClick={(event) => blogClick(event)}>
-									<div className="seperator" style={{fontFamily:"Berkeley",fontSize:"large"}}>
-									<h4 className="title highlight-2" dataIndex={index}>{post.data.title}</h4>
-									<p style={{color: "black",fontSize:"large"}}>{post.data.description}</p>
+									<div className="seperator tw-p-3">
+									<h4 className="tw-font-san tw-text-black" dataIndex={index}>{post.data.title}</h4>
+									<p className="tw-font-san tw-text-gray-600">{post.data.description}</p>
 									<p className="date">
                                     {
                                     post.data.pubDate.toLocaleDateString('en-us', {year: 'numeric',month: 'short',day: 'numeric'})
@@ -63,23 +62,9 @@ export default function BlogMainPage(props){
 									</p>
 									</div>
 								</a>
-									<img src={post.data.heroImage} alt="" className="post-image"/>
+								{ !compactView ?<img src={post.data.heroImage} alt="" className="post-image"/> : null}
 							</div>
-						) : 
-                    (<div className="post-item">
-                        <a href={`/blog/${post.slug}/`} dataIndex={index} onClick={(event) => blogClick(event)}>
-									<div className="seperator" style={{fontFamily:"Berkeley",fontSize:"large"}}>
-									<h4 className="title highlight-2" dataIndex={index}>{post.data.title}</h4>
-									<p style={{color: "black",fontSize:"large"}}>{post.data.description}</p>
-									<p className="date">
-                                    {
-                                    post.data.pubDate.toLocaleDateString('en-us', {year: 'numeric',month: 'short',day: 'numeric'})
-                                    }
-									</p>
-									</div>
-									
-								</a>
-                    </div>)
+						) 
                     )
 					}
 		</div>
@@ -88,3 +73,4 @@ export default function BlogMainPage(props){
 
 	</>
 }
+
