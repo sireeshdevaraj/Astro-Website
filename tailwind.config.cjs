@@ -5,6 +5,7 @@ module.exports = {
 	corePlugins: {
 		preflight: false,
 	},
+	darkMode : "selector",
 	important:true,
 	theme: {
 		extend: {
