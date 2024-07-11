@@ -1,11 +1,13 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE, PROFILE_PICTURE } from '../consts';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 ---
 
 <header>
 	<nav>
-		<h2><a href="/"><img src={PROFILE_PICTURE} width="50" height="50"/></a></h2>
+		<h2><a href="/"><img src={PROFILE_PICTURE} width="50" height="50"/></a>
+		</h2>
 		<div class="internal-links">
 			<HeaderLink  href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
