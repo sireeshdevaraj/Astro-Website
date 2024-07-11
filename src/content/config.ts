@@ -1,4 +1,3 @@
-import type { Schema } from 'astro/zod';
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
