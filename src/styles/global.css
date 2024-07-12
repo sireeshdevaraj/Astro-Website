@@ -92,6 +92,13 @@ p {
 .prose p {
 	margin-bottom: 2em;
 }*/
+
+.prose{
+	font-size: 1.5rem;
+}
+
+
+
 textarea {
 	width: 100%;
 	font-size: 16px;
@@ -361,6 +368,9 @@ h1:hover{
 	.comment{
 		flex-direction: column;
 		
+	}
+	.prose{
+		font-size: 1.2rem;
 	}
 /*
 	.comment-link{
