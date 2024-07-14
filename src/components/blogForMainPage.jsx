@@ -18,7 +18,7 @@ export default function BlogForMainPage(props) {
                   </time>
                   <a
                     // href={post.data?.category || "random"}
-                    className="tw-cursor-default tw-text-black tw-relative tw-z-10 tw-rounded-full tw-bg-gray-50 tw-px-3 tw-py-1.5 tw-font-medium tw-text-gray-600 hover:tw-bg-gray-100"
+                    className="tw-cursor-default tw-text-black tw-relative tw-rounded-full tw-bg-gray-50 tw-px-3 tw-py-1.5 tw-font-medium tw-text-gray-600 hover:tw-bg-gray-100"
                   >
                     {post.data.category || "rant" }
                   </a>
