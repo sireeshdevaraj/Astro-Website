@@ -12,8 +12,8 @@ export default function BlogMainPage(props){
 
 	function blogClick(event){
 		updateProgressBar();
-		const [dataIndex,title] = [event.target.getAttribute("dataIndex"),event.target.innerHTML];
-		if (!Object.keys(localStorage).includes(dataIndex)) localStorage[dataIndex] = dataIndex;
+		const [dataindex,title] = [event.target.getAttribute("dataindex"),event.target.innerHTML];
+		if (!Object.keys(localStorage).includes(dataindex)) localStorage[dataindex] = dataindex;
 		updateProgressBar();
 	}
     function compactButton(){
@@ -51,9 +51,9 @@ export default function BlogMainPage(props){
 		{
 						posts.map((post,index) =>  (
 							<div className="post-item">
-								<a href={`/blog/${post.slug}/`} dataIndex={index}  onClick={(event) => blogClick(event)}>
+								<a href={`/blog/${post.slug}/`} dataindex={index}  onClick={(event) => blogClick(event)}>
 									<div className="seperator tw-p-3">
-									<h4 className="tw-font-san tw-text-black" dataIndex={index}>{post.data.title}</h4>
+									<h4 className="tw-font-san tw-text-black" dataindex={index}>{post.data.title}</h4>
 									<p className="tw-font-san tw-text-gray-600">{post.data.description}</p>
 									<p className="date">
                                     {

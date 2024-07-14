@@ -194,7 +194,7 @@ span{
     }
 
     .post-item{
-        width: 100%;
+        width: 84vw;
 
     }
 
@@ -236,7 +236,7 @@ span{
     }
 
     .post-item{
-        width: 350px;
+        width: 84vw;
     }
 
     .post-image{
@@ -271,7 +271,7 @@ span{
     }
 
     .post-item{
-        width: 100%;
+        width: 84vw;
     }
 
     .post-image{
@@ -301,5 +301,4 @@ span{
 
 .compact-view-text:hover{
     color: oklch(66.59% .3018840772950374 4.255646284110876/ 1);
-
 }
