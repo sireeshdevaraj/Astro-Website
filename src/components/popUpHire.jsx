@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import CloseIcon from '@mui/icons-material/Close';
 import Survey from "./survey";
-
+import { survey } from "../state.store";
 
 export default function PopUpHire(props){
     const message = "Are you a recruiter?" 
     const [display,setDisplay] = useState("tw-invisible")
     const [isRecruiter,setRecruiter] = useState(false);
+    const shouldPopUp = survey.get("isSurveyCompleted")
+
     function showPopUp(){
-        // Need redux to manage states in a better way.
-        // For now, we can just keep it very simple by using DOM.
         setDisplay("tw-visible");
         document.getElementsByClassName("main")[0].style.opacity = 0.3;
     }
@@ -27,7 +27,6 @@ export default function PopUpHire(props){
     }
 
     function noButton(){
-        // I would love to get some simple ping that someone viewed my profile.
         // No, someone besides a HR viewed the website.
         setRecruiter(false);
         closePopUp();        
@@ -35,7 +34,8 @@ export default function PopUpHire(props){
 
     useEffect(() => {
         setTimeout(() => {
-            showPopUp();
+            if (!shouldPopUp) showPopUp();
+            survey.set(true) // Do not pop up again(i.e in between re-renders).
         },5000)
     },[]) // We only need to run this once.
 
