@@ -5,7 +5,7 @@ export default function Skills(){
             <p className="tw-font-berkeley tw-text-gray-600 tw-text-lg">Languages:</p>
             {
             SKILLS.languages.map((value,index) => {
-                return <img className="tw-size-12 tw-object-contain" src={value}/>
+                return <img className="tw-size-12 tw-object-contain hover:tw-scale-125 hover:tw-transition tw-ease-in-out hover:tw-scale-125 hover:tw-transition tw-ease-in-out" src={value}/>
                 })
             }
         </div>
@@ -13,7 +13,7 @@ export default function Skills(){
             <p className="tw-font-berkeley tw-text-gray-600 tw-text-lg">Databases:</p>
             {
             SKILLS.databases.map((value,index) => {
-                return <img className="tw-size-12 tw-object-contain" src={value}/>
+                return <img className="tw-size-12 tw-object-contain hover:tw-scale-125 hover:tw-transition tw-ease-in-out" src={value}/>
                 })
             }
         </div>
@@ -21,7 +21,7 @@ export default function Skills(){
             <p className="tw-font-berkeley tw-text-gray-600 tw-text-lg">System modelling:</p>
             {
             SKILLS.modelling.map((value,index) => {
-                return <img className="tw-size-12 tw-object-contain" src={value}/>
+                return <img className="tw-size-12 tw-object-contain hover:tw-scale-125 hover:tw-transition tw-ease-in-out" src={value}/>
                 })
             }
         </div>
@@ -29,7 +29,7 @@ export default function Skills(){
             <p className="tw-font-berkeley tw-text-gray-600 tw-text-lg">Deployment:</p>
             {
             SKILLS.deployment.map((value,index) => {
-                return <img className="tw-size-12 tw-object-contain" src={value}/>
+                return <img className="tw-size-12 tw-object-contain hover:tw-scale-125 hover:tw-transition tw-ease-in-out" src={value}/>
                 })
             }
         </div>
@@ -37,7 +37,7 @@ export default function Skills(){
             <p className="tw-font-berkeley tw-text-gray-600 tw-text-lg">Cloud:</p>
             {
             SKILLS.cloud.map((value,index) => {
-                return <img className="tw-size-12 tw-object-contain" src={value}/>
+                return <img className="tw-size-12 tw-object-contain hover:tw-scale-125 hover:tw-transition tw-ease-in-out" src={value}/>
                 })
             }
         </div>
