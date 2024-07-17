@@ -40,12 +40,12 @@ export default function PopUpHire(props){
     },[]) // We only need to run this once.
 
     return <>
-    <div className={"tw-w-[40vw] tw-h-[20vh] tw-m-auto tw-bg-gray-900 tw-fixed tw-top-1/2 tw-left-1/4 tw-p-6 tw-z-10 " + display}>
+    <div className={"tw-w-[40vw] tw-h-[20vh] tw-m-auto tw-bg-gray-900 tw-fixed tw-top-1/2 tw-left-1/2 tw-p-6 tw-z-40 tw--translate-x-1/2 tw--translate-y-1/2 " + display}>
         <CloseIcon className="tw-right-4 tw-absolute tw-cursor-pointer tw-text-gray-600 hover:tw-text-white" onClick={closePopUp} />
         <p className="tw-text-white tw-text-lg tw-font-bold">{message}</p>
         <div className="tw-flex tw-gap-2">
-            <p onClick={yesButton} className="tw-p-2 tw-text-center tw-cursor-pointer tw-w-12 tw-rounded-md tw-bg-indigo-500 tw-text-base tw-text-white tw-shadow-sm hover:tw-bg-indigo-400 focus-visible:tw-outline focus-visible:tw-outline-2 focus-visible:tw-outline-offset-2 focus-visible:tw-outline-indigo-500">Yes</p>
-            <p onClick={noButton} className="tw-p-2 tw-text-center tw-cursor-pointer tw-w-12 tw-rounded-md tw-bg-indigo-500 tw-text-base tw-text-white tw-shadow-sm hover:tw-bg-indigo-400 focus-visible:tw-outline focus-visible:tw-outline-2 focus-visible:tw-outline-offset-2 focus-visible:tw-outline-indigo-500">No</p>
+            <button onClick={yesButton} className="tw-p-2 tw-text-center tw-cursor-pointer tw-w-12 tw-rounded-md tw-bg-indigo-500 tw-text-base tw-text-white tw-shadow-sm hover:tw-bg-indigo-400 focus-visible:tw-outline focus-visible:tw-outline-2 focus-visible:tw-outline-offset-2 focus-visible:tw-outline-indigo-500">Yes</button>
+            <button onClick={noButton} className="tw-p-2 tw-text-center tw-cursor-pointer tw-w-12 tw-rounded-md tw-bg-indigo-500 tw-text-base tw-text-white tw-shadow-sm hover:tw-bg-indigo-400 focus-visible:tw-outline focus-visible:tw-outline-2 focus-visible:tw-outline-offset-2 focus-visible:tw-outline-indigo-500">No</button>
         </div>
     </div>
         <Survey client:only="react" isRecruiter={isRecruiter}/>

@@ -35,7 +35,7 @@ export default function Survey(props){
 
     function RecruiterSurvey(){
         return <>
-        <div className={"tw-w-[50vw] tw-h-max tw-m-auto tw-bg-gray-900 tw-fixed tw-top-1/4 tw-left-1/4 tw-p-6 tw-z-30 " + display}>
+        <div className={"tw-w-[50vw] tw-h-max tw-m-auto tw-bg-gray-900 tw-fixed tw-top-1/2 tw-left-1/2 tw-p-6 tw-z-30 tw--translate-x-1/2 tw--translate-y-1/2 " + display}>
             <CloseIcon client:only="react" className="tw-right-4 tw-absolute tw-cursor-pointer tw-text-gray-600 hover:tw-text-white" onClick={closePopUp} />
             <p className="tw-text-gray-200 tw-text-lg">{surveyMessage}</p>
             <div className="tw-h-[30vh] tw-flex tw-gap-2 tw-flex-col">
