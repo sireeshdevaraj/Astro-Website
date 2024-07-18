@@ -1,73 +1,43 @@
-import { Profiler, useEffect,useState } from "react";
-import FormattedDate from './FormattedDate.astro';
 import "../styles/blog.css";
 import "../styles/global.css";
-import { data } from "../api.anime";
-
 
 export default function BlogMainPage(props){
 	let {posts} = props;
-    const [compactView,setCompactView] = useState(true);
-	const [progress,setProgress] = useState(0);
 
-	function blogClick(event){
-		updateProgressBar();
-		const [dataindex,title] = [event.target.getAttribute("dataindex"),event.target.innerHTML];
-		if (!Object.keys(localStorage).includes(dataindex)) localStorage[dataindex] = dataindex;
-		updateProgressBar();
-	}
-    function compactButton(){
-        setCompactView(!compactView)
-    }
-	function updateProgressBar(){
-		if (parseInt(localStorage.total) == posts.length) setProgress(posts.length)
-		else{
-			const ls = localStorage;
-			let total = posts.reduce((result,post,index) => {
-				if (Object.keys(ls).includes(index.toString())){
-					result+=1
-				}
-				return result
-			}, 0)
-			setProgress(total)
-			localStorage.total = total
-		}
-	}
-
-    useEffect(() => {
-		
-		updateProgressBar();
-
-	},[compactView])
     return <> 
 	<div className="main-container">
 		<div className="settings-container" style={{fontFamily:"Berkeley",fontSize:"large"}}>
 		<a href="/rss.xml"><span className="subscribe-span">Subscribe<img className="rss" src="/rss-feed.png"/></span></a>
-				<span onClick={(event) => compactButton(event)} className="compact-view-text">{compactView ? "General View" : "Compact View"}</span>
-				<span className="progress-text">Progress({progress} / {posts.length})</span>
-				<progress className="progress-bar" max={100} value={progress*100/posts.length}></progress>
 		</div>
-			<div className="blog-posts tw-mt-3">
-		{
-						posts.map((post,index) =>  (
-							<div className="post-item mobile:tw-p-4 desktop:tw-p-0">
-								<a href={`/blog/${post.slug}/`} dataindex={index}  onClick={(event) => blogClick(event)}>
-									<div className="seperator tw-p-3">
-									<h4 className="tw-font-san tw-text-black tw-font-bold" dataindex={index}>{post.data.title}</h4>
-									<p className="tw-font-san tw-text-gray-600 tw-text-base">{post.data.description}</p>
-									<p className="tw-cursor-default tw-text-black tw-relative tw-rounded-md tw-bg-gray-300 tw-px-3 tw-py-1.5 tw-text-sm tw-text-gray-600 hover:tw-bg-gray-100 tw-w-fit">{post.data.category}</p>
-									<p className="date">
-                                    {
-                                    post.data.pubDate.toLocaleDateString('en-us', {year: 'numeric',month: 'short',day: 'numeric'})
-                                    }
-									</p>
-									</div>
-								</a>
-								{ !compactView ?<img src={post.data.heroImage} alt="" className="post-image"/> : null}
-							</div>
-						) 
-                    )
-					}
+			<div>
+			{
+				posts.map((post,index) =>  (
+					<div className="">
+						<article key={post.id} className="tw-flex tw-max-w-xl tw-flex-col tw-items-start tw-p-4" id={index}>
+						<div className="tw-flex tw-items-center tw-gap-x-4 tw-text-xs">
+						<time dateTime={post.data.pubDate.toLocaleDateString('en-us', {year: 'numeric',month: 'short',day: 'numeric'})} className="text-gray-500 tw-text-sm">
+							{post.data.pubDate.toLocaleDateString('en-us', {year: 'numeric',month: 'short',day: 'numeric'})}
+						</time>
+						<a
+						className="tw-cursor-default tw-text-sm tw-text-black tw-relative tw-rounded-full tw-bg-gray-50 tw-px-3 tw-py-1.5 tw-font-medium tw-text-gray-600 hover:tw-bg-gray-100"
+						>
+						{post.data.category || "rant" }
+						</a>
+						</div>
+						<div className="tw-group tw-relative">
+						<h3 className="tw-mt-3 tw-text-lg tw-font-semibold tw-leading-6 tw-text-gray-900 group-hover:tw-text-gray-600 tw-h-7">
+							<a href={`/blog/${post.slug}/`} className="tw-text-black tw-text-black tw-text-[1.5rem] hover:tw-text-gray-600 tw-no-underline">
+								<span className="tw-absolute tw-inset-0" />
+								{post.data.title}
+							</a>
+						</h3>
+						<p className="tw-mt-5 tw-line-clamp-3 tw-text-base tw-leading-6 tw-text-gray-600">{post.data.description}</p>
+						</div>
+						
+					</article>
+					<hr/>
+				</div>
+				) )}
 		</div>
 	</div>
 
