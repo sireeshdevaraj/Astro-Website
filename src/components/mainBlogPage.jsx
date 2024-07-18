@@ -50,11 +50,12 @@ export default function BlogMainPage(props){
 			<div className="blog-posts tw-mt-3">
 		{
 						posts.map((post,index) =>  (
-							<div className="post-item">
+							<div className="post-item mobile:tw-p-4 desktop:tw-p-0">
 								<a href={`/blog/${post.slug}/`} dataindex={index}  onClick={(event) => blogClick(event)}>
 									<div className="seperator tw-p-3">
-									<h4 className="tw-font-san tw-text-black" dataindex={index}>{post.data.title}</h4>
-									<p className="tw-font-san tw-text-gray-600">{post.data.description}</p>
+									<h4 className="tw-font-san tw-text-black tw-font-bold" dataindex={index}>{post.data.title}</h4>
+									<p className="tw-font-san tw-text-gray-600 tw-text-base">{post.data.description}</p>
+									<p className="tw-cursor-default tw-text-black tw-relative tw-rounded-md tw-bg-gray-300 tw-px-3 tw-py-1.5 tw-text-sm tw-text-gray-600 hover:tw-bg-gray-100 tw-w-fit">{post.data.category}</p>
 									<p className="date">
                                     {
                                     post.data.pubDate.toLocaleDateString('en-us', {year: 'numeric',month: 'short',day: 'numeric'})

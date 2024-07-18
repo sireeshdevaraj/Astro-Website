@@ -163,8 +163,6 @@ span{
     margin-bottom: 12px;
     padding: 0 0 0 1rem;
     display: flex;
-    word-break: break;
-    box-shadow: #222222;
 }
 
 .post-image{
