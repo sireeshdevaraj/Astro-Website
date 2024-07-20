@@ -27,10 +27,7 @@ export default function Survey(props){
             method : "POST",
             body : JSON.stringify({
                 message : message
-            }),
-            headers:{
-                "Access-Control-Allow-Origin":"https://survey.kuuhaku.space"
-            }
+            })
         })
         closePopUp();
         setSurveyCompleted(true);
