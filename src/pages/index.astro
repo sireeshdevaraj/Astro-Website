@@ -17,6 +17,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import BlogForMainPage from "../components/blogForMainPage";
 import PopUpHire from '../components/popUpHire';
 import { getCollection } from 'astro:content';
+import { theme } from "../state.store";
 const posts = (await getCollection('blog')).sort(
 	(a, b) =>  b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );

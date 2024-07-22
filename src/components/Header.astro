@@ -1,18 +1,16 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE, PROFILE_PICTURE } from '../consts';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import Theme from "./theme";
 ---
 
 <header>
-	<nav>
-		<h2><a href="/"><img src={PROFILE_PICTURE} width="50" height="50"/></a>
-		</h2>
+	<nav class="dark:tw-bg-black">
+		<Theme client:only='react'/>
 		<div class="internal-links">
-			<HeaderLink  href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/books">Books</HeaderLink>
+			<HeaderLink class="dark:tw-text-white" href="/">Home</HeaderLink>
+			<HeaderLink class="dark:tw-text-white" href="/blog">Blog</HeaderLink>
+			<HeaderLink class="dark:tw-text-white" href="/about">About</HeaderLink>
+			<HeaderLink class="dark:tw-text-white" href="/books">Books</HeaderLink>
 		</div>
 		<div class="social-links">
 			<a href="https://twitter.com/KuuHaKu1271" target="_blank">
