@@ -7,6 +7,12 @@ module.exports = {
 	},
 	darkMode : "selector",
 	important:true,
+	variants: {
+		extend: {
+		  textColor: ['hover', 'dark'],
+		  backgroundColor: ['hover', 'dark'],
+		},
+	  },
 	theme: {
 		extend: {
 			screens:{
@@ -18,6 +24,14 @@ module.exports = {
 			sans: ['Inter var'],
 			berkeley : ['Berkeley']
 		  },
+		backgroundColor:{
+			dark : "#0e1016",
+		  },
+		  textColor:{
+			darkHeading : "#F0F0F0",
+			darkPara : "#c9c7c7",
+			darkPara2 : "#B0B0B0"
+		  }
 		},
 	},
 	plugins: [],
