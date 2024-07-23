@@ -5,7 +5,7 @@ export const survey = persistentAtom("isSurveyCompleted",false,{
     decode: JSON.parse,
   });
 
-export const theme = persistentAtom("dark",false,{
+export const theme = persistentAtom("dark",true,{
   // false for dark
   encode: JSON.stringify,
   decode: JSON.parse
