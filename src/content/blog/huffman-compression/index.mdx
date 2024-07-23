@@ -1,0 +1,104 @@
+---
+title: 'Huffman Compression'
+description: "Let's encode"
+pubDate: 'Jul 23 2024'
+heroImage: '/images/blogs/thumbnail.png'
+category: "Programming"
+---
+
+I have seen many repositories on GitHub that say <span class="tw-font-sriracha tw-text-pink">“Implementation of Huffman compression in JavaScript,”</span> 
+but all they do is generate the Huffman tree and the Huffman codes for the given strings.
+
+Doesn’t the fun part come after that? Compressing your own files with your own code, 
+extending the application to a GUI level that automatically compresses your stuff in a certain folder, or something like that, 
+or you could just play with it to get a bit more insight into how computers work.
+
+If any of you tried compressing the files by directly encoding the string in binary and concatenating them, you would actually see that the size gets inflated and voila! The file is bigger than before now.
+
+That's because Huffman compression does not work that way. Yes, you generated the binary representation for each character, for example...
+```js
+// Example
+const randomLetter = "b";
+encoderRepresentation -> `101010`
+```
+And concatenating the entire string for encoding/decoding purposes will produce a large string.
+
+### Idea - one way
+
+For compression after generating the binary representation, 
+I took the `8-bit` sequences and generated ASCII characters for encoding. 
+After concatenating the complete string, we create a buffer from it and store the buffer in a file.
+
+Seems easy?, let's see how it's done.
+```js
+const binaryString = "..."
+let codec="" // ascii string
+for (let i=0;i < binaryString.length; i+=8) { 
+    //Slice the string, we only need 8 bits at once
+    const byteStr = binaryString.slice(i, i+8);
+    // Generate a number with the output
+    const number = parseInt(byteStr,2);
+    // get the character code for the number
+    codec += String.fromCharCode(number);
+}
+// Finally return the buffer from the string
+return Buffer.from(codec,'binary')  
+```
+<div class="tw-ring-1 tw-ring-gray-900 tw-px-5 tw-py-2 tw-bg-dark tw-text-darkPara">
+<h3 class="tw-text-yellow-500">⚠️ Pitfall 1</h3>
+When writing the buffer to a file, make sure to encode it properly. 
+Otherwise, you might face decoding issues, and the text might not match the original file.
+</div>
+
+```js
+const WRITE_PATH = "some_random_nerd.bin"
+fs.writeFile(WRITE_PATH,
+            encodedString,
+            {flag:"w+",encoding:'binary'},(err)=>{
+    ...
+})
+```
+Great news! You have successfully encoded the string.
+
+Now, check the decoding—you just need to reverse-engineer the whole process.
+```js
+//convert it back to string
+const asciiString = someBufferValue.toString("utf-8") 
+```
+Loop over each character get the `charCodeAt()`, convert it into binary.
+```js
+const binaryRep = ""
+for (let i=0;i<encodedString.length;i++){
+    let number = encodedString[i].charCodeAt() 
+    binaryRep+= number.toString(2).padStart(8,'0') 
+}
+```
+
+<div class="tw-ring-1 tw-ring-gray-900 tw-px-5 tw-py-2 tw-bg-dark tw-text-darkPara">
+<h3 class="tw-text-yellow-500">⚠️ Pitfall 2</h3>
+Handle the case when converting to binary.
+
+The padStart method handles cases where binaries like 0110 get converted to 110 when decoding from character code. 
+So, pad the left side with 0s until the maximum length of 8 is reached.
+</div>
+
+Now that you have converted the buffer to a binary string, read all the codes and generate your original text.
+
+### Results:
+```sh
+test.txt -> File size: 20MB
+test.encoding.bin -> File size: 12MB
+Compression ratio: 60%
+```
+### Final take:
+I assume there are many other ways people encode binary representations. 
+We have used 8-bit encoding because it's simpler. 
+I would also love to explore different methods and benchmark them for fun. 
+If you would like to add something or optimize the code above, you can visit my GitHub repository and create a pull request.
+https://github.com/sireeshdevaraj/Huffman-compression
+
+<div class="tw-ring-1 tw-ring-gray-900 tw-px-5 tw-py-2 tw-bg-dark tw-text-darkPara">
+<h3 class="tw-text-yellow-500">Extra</h3>
+Do not use <span class="tw-text-pink">`for (i of string)`</span> when encoding or decoding. 
+JavaScript only allows you to loop over up to ~65k characters. Use a ranged for loop instead.
+</div>
