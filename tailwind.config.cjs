@@ -26,6 +26,7 @@ module.exports = {
 		  },
 		backgroundColor:{
 			dark : "#0e1016",
+			dark2:"#12151c",
 		  },
 		  textColor:{
 			darkHeading : "#F0F0F0",
