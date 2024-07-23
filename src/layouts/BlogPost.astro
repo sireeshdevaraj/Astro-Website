@@ -9,6 +9,12 @@ type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, category } = Astro.props;
 ---
+<script>
+	import { theme } from "../state.store";
+	if (theme.get()){
+	document.documentElement.classList.add("tw-dark")
+}
+</script>
 
 <html lang="en">
 	<head>
@@ -29,10 +35,9 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
+				width: 800px;
+				max-width: calc(100% - 1em);
 				margin: auto;
-				padding: 1em;
 				color: rgb(var(--gray-dark));
 			}
 			.title {
@@ -45,7 +50,6 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 				margin: 0 0 0.5em 0;
 			}
 			.date {
-				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
 			}
 			.last-updated-on {
@@ -58,29 +62,30 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 		</style>
 	</head>
 
-	<body>
+	<body class="dark:tw-bg-none dark:tw-bg-dark">
 		<Header />
-		<main>
-			<article>
+		<main class="dark:tw-bg-dark">
+			<article class="dark:tw-text-darkPara prose">
+				<h1 class="dark:tw-text-darkHeading tw-text-5xl tw-mb-10">{title}</h1>
 				<div class="hero-image">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
+				<div class="tw-flex tw-justify-between tw-items-center tw-text-center">
+						<p class="dark:tw-bg-dark2 tw-bg-gray-200 tw-outline tw-outline-1 tw-outline-gray-300 dark:tw-outline-gray-600 tw-text-base tw-px-5 tw-py-1">{category}</p>
+					<div class="date tw-text-base">
+						<FormattedDate date={pubDate} />
+						{
+							updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
 					</div>
-					<slot />
+				</div>
+				<div class="prose dark:tw-text-darkPara">
+					<hr class="dark:tw-border-gray-900"/>
+					<slot/>
 				</div>
 			</article>
 		</main>
