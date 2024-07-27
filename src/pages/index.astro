@@ -65,7 +65,7 @@ const posts = (await getCollection('blog')).sort(
 					<p class="tw-p-0 tw-text-nowrap tw-ml-1 tw-text-gray-600 tw-text-base dark:tw-text-darkPara">WoW (Level 52)</p>
 				</div>
 			</div>
-			<Anilist />
+			<Anilist client:only="react"/>
 		</main>
 		<div class="right-main-container">
 		<img class="img" alt="Anime Profile Picture" src={PROFILE_PICTURE}/>
