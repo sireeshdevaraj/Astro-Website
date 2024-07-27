@@ -20,7 +20,6 @@ export const OSU = {
 export const ANIME = data
 export const PROFILE_PICTURE = "/images/profile_pics/boruto1.jpeg"
 export const EMOJIS = ['🥶','🧊','❄️','☃️','⛄']
-export const DATE = new Date().toLocaleDateString("en-US",{ year: 'numeric', month: 'long', day: 'numeric' })
 export const NAMES = [
     'Sireesh',   // English, Spanish, French, German, Portuguese, Italian
     '시리쉬',     // Korean
