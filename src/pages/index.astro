@@ -47,7 +47,7 @@ const posts = (await getCollection('blog')).sort(
 				{ABOUT_1}
 			</p>
 			<h3 class="dark:tw-text-darkHeading">Skills</h3>
-			<Skills client:load/>
+			<Skills/>
 			<Publications />
 			<BlogForMainPage client:load posts={posts} />
 			<h3 class="tw-text-3xl dark:tw-text-darkHeading">Gaming</h3>
