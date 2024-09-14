@@ -1,7 +1,7 @@
 import { data } from "./api.anime";
 
-export const SITE_TITLE = "KuuHaKu's Blog";
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_TITLE = "Sireesh's Blog";
+export const SITE_DESCRIPTION = 'Hi! This is Sireesh. I write all kinds of stuff here that is on my mind.';
 export const ABOUT_1 = `
 I'm a recreational programmer with extensive experience in research and development. Over the past years, I have worked as a freelance software engineer, completed a 6-month internship, and am currently working as a software engineer.`
 export const ABOUT_2 = `I am proficient in Go, Javascript, Python, R, and Vensim for system modeling. My database expertise includes MySQL and PostgreSQL.
