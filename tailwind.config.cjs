@@ -23,7 +23,8 @@ module.exports = {
 		fontFamily: {
 			sans: ['Inter var'],
 			berkeley : ['Berkeley'],
-			sacramento: ["Sacramento, cursive", "sans"],
+			firacode : ['FiraCode'],
+			sacramento: ["Sacramento", "sans"],
 			sriracha : ["Sriracha, cursive", "sans"]
 		  },
 		backgroundColor:{
