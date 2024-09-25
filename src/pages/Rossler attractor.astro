@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+---
+
+<Layout
+	title="Rössler attractor (Matlab Simulation)"
+	description="Visualising Brians brain."
+	pubDate={new Date('Sep 24 2024')}
+	heroImage="/images/blogs/Rossler_attractor.png"
+    category='Simulation'
+	>
+    <a href="/code/rossler_attractor.slx" download="rossler_attractor.slx" class="tw-font-sriracha tw-text-base-lg tw-items-center tw-flex"><FileDownloadIcon client:only="react"/>Download Simulink Model</a>
+    <img src="/images/blogs/rossler_accelerator_siumulink.png" alt="Rossler attractors simulation image from matlab"/>
+    <img src="/images/blogs/Rossler_attractor.png" alt="Rossler attractors simulation image from matlab"/>
+    <img src="/images/blogs/Rossler_attractor_2.png" alt="Rossler attractors simulation image from matlab"/>
+
+    References:<br>
+    <a href="https://en.wikipedia.org/wiki/R%C3%B6ssler_attractor#" class="tw-text-white tw-font-firacode" target="_top">
+        Rössler attractor, Wikipedia
+    </a>
+</Layout>

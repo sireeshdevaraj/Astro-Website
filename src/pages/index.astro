@@ -42,7 +42,9 @@ const posts = (await getCollection('blog')).sort(
 		<main>
 			<h1 class="dark:tw-text-darkHeading">Hi, this is Sireesh
 			</h1> 
+			<!-- 
 			<svg class="pointy-arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 800 800"><g stroke-width="10" stroke="hsl(227, 71%, 57%)" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0.913545457642601,-0.40673664307580015,0.40673664307580015,0.913545457642601,-185.11284028736043,257.27647417327967)"><line x1="158.5" y1="158.5" x2="641.5" y2="641.5" marker-end="url(#SvgjsMarker4278)"></line></g><defs><marker markerWidth="20" markerHeight="50" refX="5" refY="5" viewBox="0 0 10 10" orient="auto" id="SvgjsMarker4278"><polyline points="0,5 5,2.5 0,0" fill="none" stroke-width="1.6666666666666667" stroke="hsl(227, 71%, 57%)" stroke-linecap="round" transform="matrix(1,0,0,1,1.6666666666666667,2.5)" stroke-linejoin="round"></polyline></marker></defs></svg>
+			-->
 			<p class="dark:tw-text-darkPara">
 				{ABOUT_1}
 			</p>
@@ -68,12 +70,17 @@ const posts = (await getCollection('blog')).sort(
 			<Anilist client:only="react"/>
 		</main>
 		<div class="right-main-container">
-		<img class="img" alt="Anime Profile Picture" src={PROFILE_PICTURE}/>
+		<img class="img tw-object-cover" alt="Anime Profile Picture" src={PROFILE_PICTURE}/>
 		<div class="goodies-container mobile:tw-hidden desktop:tw-block">
 			<h4 class="goodies-container-p dark:tw-text-darkPara">
-				Play
+				Simulations
 			</h4>
-			<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-gray-600 tw-cursor-pointer tw-text-none dark:tw-text-darkPara" href="/Brians-Brain">Brian's brain<ArrowOutwardIcon client:only="react" style={{width:"20px",height:"20px"}}/></a>
+			<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-gray-600 tw-cursor-pointer tw-text-none dark:tw-text-darkPara" href="/Brians-Brain">
+				Brian's brain<ArrowOutwardIcon client:only="react" style={{width:"20px",height:"20px"}}/>
+			</a><br>
+			<a class="tw-inline-flex tw-items-center tw-text-black hover:tw-text-gray-600 tw-cursor-pointer tw-text-none dark:tw-text-darkPara" href="/Rossler attractor">
+				Rössler attractor<ArrowOutwardIcon client:only="react" style={{width:"20px",height:"20px"}}/>
+			</a>
 			<h4 class="goodies-container-p dark:tw-text-darkPara">
 				Links
 			</h4>
