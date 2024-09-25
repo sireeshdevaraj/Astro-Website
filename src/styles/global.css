@@ -244,6 +244,12 @@ blockquote{
 	src: url("/fonts/berkeley-mono-variable-2.ttf");
 }
 
+
+@font-face {
+	font-family: "firacode";
+	src: url("/fonts/FiraCode.ttf");
+}
+
 .note{
 	background-color: lightblue;
 	border: solid black;
