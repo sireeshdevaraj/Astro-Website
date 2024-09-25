@@ -18,7 +18,7 @@ export const OSU = {
     "url" : "https://osu.ppy.sh/users/21179459"
 }
 export const ANIME = data
-export const PROFILE_PICTURE = "/images/profile_pics/boruto1.jpeg"
+export const PROFILE_PICTURE = "/images/profile_pics/miyamoto-musashi.jpeg"
 export const EMOJIS = ['🥶','🧊','❄️','☃️','⛄']
 export const NAMES = [
     'Sireesh',   // English, Spanish, French, German, Portuguese, Italian
