@@ -34,6 +34,7 @@ const posts = (await getCollection('blog')).sort(
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+		<script src="../scripts/observer.js"/>
 	</head>
 	<body class="tw-font-sans dark:tw-bg-dark dark:tw-bg-none">
 		<Header title={SITE_TITLE} />
@@ -45,7 +46,7 @@ const posts = (await getCollection('blog')).sort(
 			<!-- 
 			<svg class="pointy-arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 800 800"><g stroke-width="10" stroke="hsl(227, 71%, 57%)" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0.913545457642601,-0.40673664307580015,0.40673664307580015,0.913545457642601,-185.11284028736043,257.27647417327967)"><line x1="158.5" y1="158.5" x2="641.5" y2="641.5" marker-end="url(#SvgjsMarker4278)"></line></g><defs><marker markerWidth="20" markerHeight="50" refX="5" refY="5" viewBox="0 0 10 10" orient="auto" id="SvgjsMarker4278"><polyline points="0,5 5,2.5 0,0" fill="none" stroke-width="1.6666666666666667" stroke="hsl(227, 71%, 57%)" stroke-linecap="round" transform="matrix(1,0,0,1,1.6666666666666667,2.5)" stroke-linejoin="round"></polyline></marker></defs></svg>
 			-->
-			<p class="dark:tw-text-darkPara">
+			<p class="dark:tw-text-darkPara tw-transition" style="visibility: hidden;" id="about">
 				{ABOUT_1}
 			</p>
 			<h3 class="dark:tw-text-darkHeading">Skills</h3>
@@ -53,7 +54,7 @@ const posts = (await getCollection('blog')).sort(
 			<Publications />
 			<BlogForMainPage client:load posts={posts} />
 			<h3 class="tw-text-3xl dark:tw-text-darkHeading">Gaming</h3>
-			<div class="desktop:tw-grid desktop:tw-grid-cols-3 mobile:tw-flex mobile:tw-flex-col tw-p-4 mobile:tw-w-3/4 tablet:tw-w-80 desktop:tw-w-full">
+			<div id="gaming" style="visibility:hidden;" class="desktop:tw-grid desktop:tw-grid-cols-3 mobile:tw-flex mobile:tw-flex-col tw-p-4 mobile:tw-w-3/4 tablet:tw-w-80 desktop:tw-w-full">
 				<div class="tw-flex tw-text-center tw-inline-flex tw-items-center tw-ml-2 tw-p-2 tw-h-8 desktop:tw-justify-center">
 					<img class="tw-size-8 tw-object-contain" src="/images/valorant_icon.jpg" />
 					<p class="tw-p-0 tw-text-nowrap tw-ml-1 tw-text-gray-600 tw-text-base dark:tw-text-darkPara">Valorant (Diamond 2)</p>
@@ -70,8 +71,8 @@ const posts = (await getCollection('blog')).sort(
 			<Anilist client:only="react"/>
 		</main>
 		<div class="right-main-container">
-		<img class="img tw-object-cover" alt="Anime Profile Picture" src={PROFILE_PICTURE}/>
-		<div class="goodies-container mobile:tw-hidden desktop:tw-block">
+		<img class="img tw-object-cover tw-transition-opacity" style="visibility: hidden;" alt="Anime Profile Picture" id="profile_image" src={PROFILE_PICTURE}/>
+		<div class="goodies-container mobile:tw-hidden desktop:tw-block" id= "simulations_container">
 			<h4 class="goodies-container-p dark:tw-text-darkPara">
 				Simulations
 			</h4>
@@ -149,5 +150,18 @@ const posts = (await getCollection('blog')).sort(
 			top:20%;
 			
 		}
+		@keyframes fadeIn {
+			0% { 
+				opacity: 0; 
+				transform: translateY(10px); 
+				visibility: hidden;
+			}
+			100% { 
+				opacity: 1; 
+				visibility: visible;
+				transform: translateY(0);
+			 }
+}
+
 	</style>
 </html>
