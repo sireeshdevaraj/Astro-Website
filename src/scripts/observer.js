@@ -14,5 +14,4 @@ intersectionObserver.observe(document.getElementById("profile_image"));
 intersectionObserver.observe(document.getElementById("simulations_container"));	
 intersectionObserver.observe(document.getElementById("publications"));	
 intersectionObserver.observe(document.getElementById("skills"));	
-intersectionObserver.observe(document.getElementById("blogForMainPage"));	
 intersectionObserver.observe(document.getElementById("gaming"));	

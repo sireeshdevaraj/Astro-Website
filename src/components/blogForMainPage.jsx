@@ -1,7 +1,7 @@
 export default function BlogForMainPage(props) {
     let {posts} = props
     return (
-      <div className="tw-py-8 mobile:tw-py-8 tw-mt-3" id="blogForMainPage" style={{visibility: "hidden"}}>
+      <div className="tw-py-8 mobile:tw-py-8 tw-mt-3">
         <div className="tw-mx-auto tw-max-w-7xl">
           <div className="tw-mx-auto tw-max-w-2xl desktop:tw-mx-0">
             <h2 className="tw-text-3xl tw-font-bold tw-tracking-tight tw-text-gray-900 mobile:tw-text-4xl dark:tw-text-darkHeading">From the blog</h2>
