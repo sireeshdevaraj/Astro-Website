@@ -119,6 +119,7 @@ code {
 	border-radius: 2px;
 }
 pre {
+	font-size: 20px;
 	padding: 1.5em;
 	border-radius: 8px;
 }
@@ -376,6 +377,9 @@ h1:hover{
 		
 	}
 	.prose{
+		font-size: 1.2rem;
+	}
+	pre{
 		font-size: 1.2rem;
 	}
 /*
