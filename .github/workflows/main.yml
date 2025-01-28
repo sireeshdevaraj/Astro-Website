@@ -18,7 +18,8 @@ jobs:
           passphrase : ${{ secrets.SSH_PASSPHRASE}}
           port: 22                                 # SSH port (default: 22)
           script: |
-            cd /root/Astro-Website/               
+            cd /root/Astro-Website/     
+            git pull          
             echo "Deploying..."
             npm run build
             mv dist build
