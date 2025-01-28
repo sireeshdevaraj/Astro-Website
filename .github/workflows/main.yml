@@ -15,6 +15,7 @@ jobs:
           host: ${{ secrets.HOST }}         # Your remote server's IP or hostname
           username: ${{ secrets.USERNAME }}     # SSH username
           key: ${{ secrets.SSH_PRIVATE_KEY }}   # Private key stored in GitHub Secrets
+          passphrase : ${{ secrets.SSH_PASSPHRASE}}
           port: 22                                 # SSH port (default: 22)
           script: |
             cd /root/Astro-Website/               
