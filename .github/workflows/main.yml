@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ] # Trigger this workflow on pushes to the `main` branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Executing remote commands in VPS
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}         # Your remote server's IP or hostname
+          username: ${{ secrets.USERNAME }}     # SSH username
+          key: ${{ secrets.SSH_PRIVATE_KEY }}   # Private key stored in GitHub Secrets
+          port: 22                                 # SSH port (default: 22)
+          script: |
+            cd /root/Astro-Website/               
+            echo "Deploying..."
+            npm run build
+            mv dist build
+            rm /var/www/build -r
+            mv build /var/www/
+            systemctl restart nginx
+            echo "deployed!"
