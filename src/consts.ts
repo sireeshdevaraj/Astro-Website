@@ -3,7 +3,7 @@ import { data } from "./api.anime";
 export const SITE_TITLE = "Sireesh's Blog";
 export const SITE_DESCRIPTION = 'Hi! This is Sireesh. I write all kinds of stuff here that is on my mind.';
 export const ABOUT_1 = `
-I'm a recreational programmer with extensive experience in research and development. Over the past years, I have worked as a freelance software engineer, completed a 6-month internship, and am currently working as a software engineer.`
+I'm a recreational programmer with extensive experience in research and development. I am currently working as a Software Engineer.`
 export const ABOUT_2 = `I am proficient in Go, Javascript, Python, R, and Vensim for system modeling. My database expertise includes MySQL and PostgreSQL.
 Additionally, I have strong deployment skills with NGINX, pm2, and Docker. Worked with AWS, SES and also google analytics.`
 export const ABOUT_3 = `Challenging roles in backend or frontend development.`
@@ -18,7 +18,7 @@ export const OSU = {
     "url" : "https://osu.ppy.sh/users/21179459"
 }
 export const ANIME = data
-export const PROFILE_PICTURE = "/images/profile_pics/miyamoto-musashi.jpeg"
+export const PROFILE_PICTURE = "/images/profile_pics/fy.png"
 export const EMOJIS = ['🥶','🧊','❄️','☃️','⛄']
 export const NAMES = [
     'Sireesh',   // English, Spanish, French, German, Portuguese, Italian
