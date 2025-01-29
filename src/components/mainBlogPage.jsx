@@ -9,7 +9,7 @@ export default function BlogMainPage(props){
 		<div className="settings-container" style={{fontFamily:"Berkeley",fontSize:"large"}}>
 		<a href="/rss.xml"><span className="subscribe-span dark:tw-text-darkPara2 dark:hover:tw-text-white">Subscribe<img className="rss" src="/rss-feed.png"/></span></a>
 		</div>
-			<div>
+			<div className="tw-overflow-visible">
 			{
 				posts.map((post,index) =>  (
 					<div className="">
